@@ -1,13 +1,20 @@
 <!DOCTYPE html>
-<html>
+<html lang="en-us">
     <head>
         <title>Hi Moon Dev</title>
+        <meta charset="utf-8">
         <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="unity.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="UnityProgress.js"></script>
+        <script src="UnityLoader.js"></script>
+        <script>
+            var gameInstance = UnityLoader.instantiate("gameContainer", "gamee.json", {onProgress: UnityProgress});
+        </script>
     </head>
     <body>
-        <div id="intro">
+        <div class="content"  id="intro">
             <div id="center-rec">
                 <p>
                     My name is <b>Ismail Hilali</b><br>
@@ -17,14 +24,18 @@
             </div>
         </div>
         <div class="empty"></div>
-        <div id="table-of-content">
-            
-        </div>
+        <div class="content" id="table-of-content"></div>
         <div class="empty"></div>
+        <div class="content" id="game">
+            <div class="webgl-content">
+                <div id="gameContainer" style="width: 960px; height: 600px"></div>
+            </div>
+        </div>
         <header id="slide-indicator">
-            <img class="table hover-active" src="public/table-repainted.png">
+            <img class="table hover-active" src="table-repainted.png">
             <span id="table-tooltip"><b>Table of Content</b><br><span style="font-size: 10px;">Badum Tsss</span></span>
             <div class="indicator current"></div>
+            <div class="indicator"></div>
             <div class="indicator"></div>
         </header>
         <script src="script.js"></script>
